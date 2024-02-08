@@ -1,38 +1,404 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    list-style-type:none;
+    scroll-behavior: smooth;
+}
+body{
+    width: 100vw;
+}
+nav{
+    width: 100%;
+    padding: 5vh 0;
+    background: rgba(0,0,0,1);
+    backdrop-filter: blur(1px);
+    mix-blend-mode: multiply;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   color: aliceblue;
+   z-index: 100000;
+
+   ul{
+    display: none;
+   }
+   h3{
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h3 span{
+    color: red;
+    font-family: cursive;
+}
+}
+img{
+    object-fit: cover;
+    object-position: center;
+}
+.menu{
+ width: 3.6em;
+ height: 1.6em;
+ background: transparent;
+ display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+  gap: 0;
+}
+.menu div{
+    width: 50%;
+    height: 2px;
+   background: white;
+   transition: .5s;
+   font-weight: bolder;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.a{
+   transform: rotate(45deg) translateY(12px);
+   transition: .5s;
+   background: white;
+}
+.b{
+    transform: scale(0);
+    transition: .2s;
+}
+.c{
+    transform: rotate(-45deg) translateY(-12px);
+    transition: .5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+ }
+ .main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    
+ }
+ .intro{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+    padding: 0em 1.5em;
+    background: transparent;
+
+    h1{ text-align: center;
+        color: white;
+        margin-bottom: .3em;
+        font-size: 2.2em;
+        font-weight: bolder;
+        font-variant: small-caps;
+        letter-spacing: .5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      
+    }
+    span{
+        color: red;
+        font-family: cursive;
+    }
+    button{
+     
+      text-align: justify;
+      margin-top: 1em;
+      color: yellow;
+      padding: 1em 1.4em;
+      background: red;
+      border-radius: .4em;
+      border: none;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    a{
+        color: yellow;
+    }
+  
+ }
+ article{
+    width: 30%;
+    height: 90vh;
+    background: #000;
+    position: absolute;
+    top: 6em;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    gap: 1.4em;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   transition: .5s;
+   opacity: 1;
+   
+   
+   a{
+    color: yellow;
+   }
+}
+.out{
+    width: 30%;
+    height: 100vh;
+    background: #000;
+    position: absolute;
+    top: 6em;
+    display: none ;
+    opacity: 0;
+    right: -100vw;
+    z-index: 10;
+    gap: 1.4em;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   transition: 1s ease-in-out;
+   transition-delay: opacity .7s;
+   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ .store{
+    width: 100%;
+    height: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+    padding: .5em 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .6rem;
+    
+ }
+ .item_showcase{
+    background: snow;
+    padding: .4em;
+    box-shadow: 6px 6px 6px silver;
+    border-radius: .7em;
+    display: grid;
+    grid-template-rows: 1fr 1/2fr;
+    padding: 0em;
+    background: orangered;
+    
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .details{
+     display: flex;
+     flex-direction: column;
+     gap: .5em;
+   justify-content: center;
+    }
+    p{
+        font-weight: lighter;
+    }
+  
+    .name{
+        font-size: large;
+        font-family: cursive;
+        color: moccasin;
+        display: flex;
+        justify-content: space-between;
+        padding: .6em;
+    
+    }
+    .price{
+        font-size: large;
+        color: firebrick;
+        padding: .3em;
+        
+    }
+ }
+
+.picks{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .h1{
+        text-align: center;
+        letter-spacing: .2em;
+        margin: 1em 0;
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    }
+    img{
+        width: 50vh;
+        height: 45vh;
+        margin: auto auto;
+        object-position: center;
+        object-fit: cover;
+        border-radius: 0;
+    }
+    button{
+        padding: .4em 3em;
+        background: orangered;
+        border: none;
+        color: azure;
+        margin: 1.3em 0;
+        border-radius: .5em;
+      
+
+    }
+}
+.item-info{
+    background-color: cornflowerblue;
+    padding: 2em 1em;
+    margin: 1em 0;
+    display: flex;
+    gap: 30vh;
+    border-radius: .7em;
+
+    .lg{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        input{
+            width: 100%;
+            padding: 1em 2em;
+            border: none;
+            border-radius: .5em;
+        }
+        input[type="submit"]{
+            background-color: yellow;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            color: red;
+        }
+     
+    }
+
+    .amount{
+        color: antiquewhite;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        padding: .8em;
+
+        main{
+            text-align: justify;
+            color: red;
+            margin: .1em 0;
+            font-weight: bolder;
+            font-family: cursive;
+        }
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search{
+    width: 100%;
+    height: 100vh;
+    background: #022;
+    color: antiquewhite;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5em 0;
+    flex-direction: column;
+    gap: 1em;
+
+    form{
+        width: 100%;
+        height: 100%;
+       
+    }
+    input{
+        width: 50%;
+        padding: .7em;
+        border: none;
+        border-radius: .7em;
+        
+    }
+    input[type="submit"]{
+        background-color: red;
+        color: yellow;
+        
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@media  screen and (min-width:768px) {
+    nav{
+        width: 100%;
+        padding: 5vh 0;
+        background: rgba(0,0,0,1);
+        backdrop-filter: blur(1px);
+        mix-blend-mode: multiply;
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: space-around;
+       align-items: center;
+       color: aliceblue;
+       
+       ul{
+           display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: space-around;
+       align-items: center;
+       
+       }
+       li{
+           padding: 0 20px;
+           font-weight: bolder;
+           color: white;
+           font-size: larger;
+           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+       
+       }
+       .menu{
+         display: none;
+       }
+     
+    }
+    article{
+        display: none;
+      }
+      form{
+        width: 100%;
+        height: 100%;
+    }
+    input{
+        width: 95%;
+        padding: .7em;
+        border: none;
+        border-radius: .7em;
+        
+    }
+    .store{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+      
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search{
+    width: 100%;
+    height: 100vh;
+    background: #022;
+    color: antiquewhite;
+    z-index: -1;
+
+    form{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        padding: .5em 0;
+
+    }
+    input{
+        width: 50%;
+        padding: .7em;
+        border: none;
+        border-radius: .7em;
+        
+    }
 }
